@@ -1,0 +1,13 @@
+form {
+    border: black solid 1px;
+    width: 200px;
+    height: 130px;
+}
+
+input {
+    margin: 5px;
+}
+
+label {
+    margin: 8px;
+}
