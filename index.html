@@ -6,16 +6,18 @@
   <title>Галерея картинок</title>
 </head>
 <body>
-<form name="authorization">
+<form id="authorization">
   <label>
     Email:
-    <input type="text" name="email" placeholder="Введите email">
+    <input type="text" name="email" placeholder="Введите email" value="">
   </label><br>
   <label>
     Пароль:
-    <input type="text" name="password" placeholder="Введите пароль">
-  </label><br>
-  <input type="button" value="Отправить">
+    <input type="text" name="password" placeholder="Введите пароль" value="">
+  </label>
+  <div class="incorrect"></div><br>
+  <input type="submit" value="Login">
 </form>
+<script src="authorization/authorization.js"></script>
 </body>
 </html>
