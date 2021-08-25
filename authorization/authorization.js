@@ -18,7 +18,15 @@ form.addEventListener("submit", async event => {
     return alert(result.errorMessage)
   }
 
-  console.log(result.token);
+  const {token} = result;
+
+  if (!localStorage.token) {
+    localStorage.setItem("token", token);
+    setTimeout( () => {
+      localStorage.removeItem("token");
+    }, 6e5)
+  }
+  console.log(token);
 });
 
 async function authorizationUser(user) {
