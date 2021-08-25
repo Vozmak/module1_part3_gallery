@@ -1,7 +1,6 @@
 form {
     border: black solid 1px;
-    width: 200px;
-    height: 130px;
+    width: 300px;
 }
 
 input {
@@ -10,4 +9,10 @@ input {
 
 label {
     margin: 8px;
+}
+
+.incorrect {
+    color: red;
+    margin: 0;
+    padding: 0;
 }
