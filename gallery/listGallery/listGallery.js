@@ -33,4 +33,6 @@ async function displayImgList() {
     newImg.src = img;
     gallery.insertAdjacentElement("beforeend", newImg);
   }
+
+  localStorage.setItem("page", page);
 }
