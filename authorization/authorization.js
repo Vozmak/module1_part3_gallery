@@ -31,7 +31,6 @@ form.addEventListener("submit", async event => {
 
     window.location.href = `gallery/gallery.html?page=${localStorage.page || 1}`;
   }
-  console.log(token);
 });
 
 async function authorizationUser(user) {
