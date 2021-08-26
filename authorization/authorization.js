@@ -1,4 +1,9 @@
-const form = document.getElementById("authorization")
+if (localStorage.timestamp < Date.now()) {
+  localStorage.removeItem("token");
+  localStorage.removeItem("timestamp");
+}
+
+const form = document.getElementById("authorization");
 
 form.addEventListener("submit", async event => {
   event.preventDefault()
@@ -22,9 +27,7 @@ form.addEventListener("submit", async event => {
 
   if (!localStorage.token) {
     localStorage.setItem("token", token);
-    setTimeout( () => {
-      localStorage.removeItem("token");
-    }, 6e5)
+    localStorage.setItem("timestamp", Date.now() + 6e5);
   }
   console.log(token);
 });
@@ -33,9 +36,11 @@ async function authorizationUser(user) {
   if (!userValidation(user)) {
     const incorrect = document.querySelector(".incorrect");
     incorrect.textContent = 'Некоректный ввод. Проверьте привильность email и пароля.';
+
     setTimeout( () => {
       incorrect.textContent = '';
     }, 7000);
+
     return {
       "errorMessage": "Некоректный ввод. Проверьте привильность email и пароля."
     };
