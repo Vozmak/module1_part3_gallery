@@ -20,6 +20,12 @@ async function displayImgList() {
     }
   });
 
+  if (imgList.status !== 200) {
+    let error = await imgList.json();
+
+    return alert(error.errorMessage);
+  }
+
   const jsonImgList = await imgList.json();
 
   for (let img of jsonImgList.objects) {
