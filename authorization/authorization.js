@@ -28,6 +28,8 @@ form.addEventListener("submit", async event => {
   if (!localStorage.token) {
     localStorage.setItem("token", token);
     localStorage.setItem("timestamp", Date.now() + 6e5);
+
+    window.location.href = `gallery/gallery.html?page=${localStorage.page || 1}`;
   }
   console.log(token);
 });
