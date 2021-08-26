@@ -61,7 +61,7 @@ async function authorizationUser(user) {
 
 function userValidation({email, password}) {
   const emailRegExp = /^[a-z\d]+@[a-z]+\.[a-z]+$/i;
-  const passRegExp = /^[a-z\d]{8}$/i;
+  const passRegExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z\d]{8}$/;
 
   return emailRegExp.test(email)? passRegExp.test(password) : false;
 }
