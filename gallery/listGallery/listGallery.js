@@ -12,11 +12,7 @@ async function displayImgList() {
   const gallery = document.querySelector(".gallery")
 
   const searchParams = new URL(window.location.href).searchParams;
-  let page = searchParams.get("page");
-
-  if (localStorage.page) {
-    page = localStorage.page
-  }
+  let page = searchParams.get("page") || localStorage.page || 1;
 
   const imgList = await fetch("https://glq7fjiy07.execute-api.us-east-1.amazonaws.com/api/gallery?page=" + page, {
     headers: {
